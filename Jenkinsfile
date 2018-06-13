@@ -2,8 +2,17 @@ pipeline {
   agent any
   stages {
     stage('build') {
-      steps {
-        echo 'hello world'
+      parallel {
+        stage('build') {
+          steps {
+            echo 'hello world'
+          }
+        }
+        stage('build2') {
+          steps {
+            emailext(subject: 'test build', body: 'ok')
+          }
+        }
       }
     }
   }
