@@ -10,7 +10,7 @@ pipeline {
         }
         stage('build2') {
           steps {
-            emailext(subject: 'test build', body: 'ok', to: 'liurui@tuniu.com')
+            emailext(subject: 'test build', body: 'ok', to: 'liuruie@gmail.com')
           }
         }
       }
